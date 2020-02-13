@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYT API</title>
+    <!-- Bootstrap CSS link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- jumbotron at top of screen -->
+        <div class="jumbotron" style="background-color: #20315A ; color: white;">
+            <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <!-- Search Paramaters Card-->
+                <div class="card">
+                    <div class="card-header">
+                        <strong><i class="fa fa-list-alt"></i> Search Parameters</strong>
+                    </div>
+                    <div class="card-body">
+                        <!-- Creating an HTML form to handle the inputs-->
+                        <form role="form">
+                            <!-- Creating a text box for capturing the search term-->
+                            <div class="form-group">
+                                <label for="search">Search Term:</label>
+                                <input type="text" class="form-control" id="search-term">
+                            </div>
+
+                            <!-- Here we capture the number of records that the user wants to retrieve -->
+                            <div class="form-group">
+                                <label for="pwd">Number of Records to Retrieve</label>
+                                <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                    <option value="1">1</option>
+                                    <!-- setting the option for 5 as the default with 'selected' -->
+                                    <option selected value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <!-- Here we capture the start year parameter -->
+                            <div class="form-group">
+                                <label for="start-year">Start Year (Optional):</label>
+                                <input type="text" class="form-control" id="start-year">
+                            </div>
+
+                            <!-- Here we capture the end year parameter -->
+                            <div class="form-group">
+                                <label for="end-year">End Year (Optional):</label>
+                                <input type="text" class="form-control" id="end-year">
+                            </div>
+
+                            <!-- Here we have our final submit button -->
+                            <button type="submit" class="btn btn-default" id="run-search">
+                                <i class="fa fa-search"></i> Search</button>
+                            <button class="btn btn-default" id="clear-all">
+                                <i class="fa fa-trash"></i> Clear Results</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This row will handle all of the search results -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+                <div class="card">
+                    <!-- This is the card heading -->
+                    <div class="card-header">
+                        <strong><i class="fa fa-table"></i> Top Articles</strong>
+                    </div>
+                    <!-- This is the card body that will hold each of the resulting articles -->
+                    <div class="card-body" id="wellSection">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is the final row that creates a line break followed by closing -->
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Line break followed by closing -->
+                <hr>
+                <h5 class="text-center">
+                    <small>Made with lots and lots of <i class="fa fa-heart"></i></small>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery JS-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
